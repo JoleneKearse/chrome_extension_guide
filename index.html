@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Roboto+Mono:ital,wght@0,400;1,500&family=Roboto+Slab:wght@200;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Chrome Extension Guide</title>
+</head>
+<body>
+    <header>
+        <h1>Chrome Extension Step-By-Step</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>1: Set up the HTML</h2>
+            <p>In lesson 2, <a href="https://scrimba.com/learn/learnjavascript/add-button-and-input-tag-coc2b456499fbdd224733183e"><b>Add Button & Input Tag</b></a>, we just set it up as a regular HTML page!</p>
+            <p>So in the <span class="code">body</span> tag, we simple add <span class="code">input</span> and <span class="code">button</span> elements, with <b>id's</b> to access via JavaScript later on.</p>
+            <p>The result:</p>
+            <img src="img/l2output.png" alt="">
+            <p>The code:</p>
+            <img src="img/l2input.png" alt="">
+            <p>Then, style to your heart's content!</p>
+        </section>
+
+        <section>
+            <h2>2: Make the Button Work with JS</h2>
+            <p>We get to our first JavaScript in lesson 4, <a href="https://scrimba.com/learn/learnjavascript/make-the-input-button-work-with-onclick-co48f417a81a9731509f01933"><b>Make the Input Button Work with <i>onclick</i></b></a>.</p>
+            <p>Remember to link the <span class="code">.js</span> file in the HTML!</p>
+            <p>While there add the functionality to the button element:</p>
+            <code><span class="code">button id="input-btn" <b>onclick="saveLead()"</b></span></code>
+            <p>We begin the JS file by creating the function statement.</p>
+        </section>
+
+        <section>
+            <h2>3: Make the Button 'Better'</h2>
+            <p>Lesson 5, <a href="https://scrimba.com/learn/learnjavascript/refactor-to-addeventlistener-co8ce4dcf8add1c0072d608fa"><b>Refactor to addEventListener</b></a>, we change how the button is activated. <i>This is how it is commonly done by professionals.</i></p>
+            <p>In our JS, we grab the id:</p>
+            <code><span class="code">let inputBtn = document.getElementById("input-btn")</span></code>
+            <p>This way we can remove the <span class="code">onclick</span> from our HTML, so our JS handles all the event listeners.</p>
+            <img src="img/l5input.png" alt="">
+        </section>
+
+        <section>
+            <h2>4: Begin Work on the Input Array</h2>
+            <p>On to lesson 8, <a href="https://scrimba.com/learn/learnjavascript/create-the-myleads-array-and-inputel-cobdc4921bc7ab475bc52cd59"><b>Create the myLeads Array & inputEl</b></a>.</p>
+            <p>Here we set up the infastructure to make a working extension.</p>
+            <p>Two variables are needed, to save the leads and to accept user input.</p>
+            <p>Here you consider which variables should be <span class="code">let</span> or <span class="code">const</span>, meaning 'decide which ones will change in the program.</p>
+            <p>Our button can be changed, as seen in the following code:</p>
+            <img src="img/l8input.png" alt="">
+        </section>
+
+        <section>
+            <h2>5: Add New Leads to the Array</h2>
+            <p>Skipping to lesson 10, <a href="https://scrimba.com/learn/learnjavascript/push-to-the-myleads-array-co2a74222ac74938cefd7caf1"><b>Push to the myLeads Array</b></a>, we begin adding the leads so more can be displayed.</p>
+            <img src="img/l10input.png" alt="">
+            <p>This will keep pushing the same hard-coded value into the array. So improvement is needed...</p>
+        </section>
+
+        <section>
+            <h2>6: Actually Use the User Input</h2>
+            <p>Lesson 11, <a href="https://scrimba.com/learn/learnjavascript/push-the-value-from-the-input-field-cod93488d8dd146bbe2d11a0f"><b>Push the Value from the Input Field</b></a>, makes it a lot more useful.</p>
+            <p>We access the value from the input thusly:</p>
+            <code><span class="code">myLeads.push(<b>inputEl.value</b>)</span></code>
+        </section>
+
+        <section>
+            <h2>7: Implement a Loop for the Leads</h2>
+            <p>On to lesson 12, <a href="https://scrimba.com/learn/learnjavascript/use-a-for-loop-to-log-out-leads-co25149dc879b0bcc7e1fac8a"><b>Use a for Loop to Log Out Leads</b>, </a> we begin to actually show the leads to the user.</p>
+            <p>Since the MVP requires us to display the leads to the user, we need to begin to show them one-by-one.</p>
+            <p>What better way than using a <span class="code">for</span> loop?</p>
+            <img src="img/l12input.png" alt="">
+            <p><i>Of course, I forgot to write <span class="code">myLeads[i]</span>, when reviewing! I consistently do this and wonder when I'll finally remember!</i></p>
+        </section>
+
+        <section>
+            <h2>8: Get Ready to Display the Leads as a List</h2>
+            <p>Lucky lesson 13, <a href="https://scrimba.com/learn/learnjavascript/create-the-unordered-list-co8c94a4b8a4636bb74711f69"><b>Create the Unordered List</b></a>, starts work on how the leads will be displayed under the Submit button.</p>
+            <p>This lesson simply adds the element to the HTML:</p>
+            <img src="img/l13inputHTML.png" alt="">
+            <p>And grabs the element in JavaScript:</p>
+            <code><span class="code">const ulEl = document.getElementById("ul-el")</span></code>
+        </section>
+
+        <section>
+            <h2>9: Put the Leads in the List</h2>
+            <p>Moving on to lesson 14, <a href="https://scrimba.com/learn/learnjavascript/render-the-leads-in-the-unordered-list-co8f34f73abf41c76417dae76"><b>Render the Leads in the Unordered List</b></a>, we start out 'wrongly' showing them as plain text to be fixed later.</p>
+            <p>Remember to use <span class="code"><b>+</b>=</span> so it doesn't clear out the <span class="code">textContent</span> each time!</p>
+            <img src="img/l14input.png" alt="">
+            <p>And this is why this is the wrong way! Although we are getting there.</p>
+            <img src="img/l14output.png" alt="">
+        </section>
+
+        <section>
+            <h2>10: Actually Make Them a List</h2>
+            <p>In lesson 15, we <a href="https://scrimba.com/learn/learnjavascript/how-to-render-li-elements-with-innerhtml-co45643f7acb5a22fc0e09451"><b>Render &lt;li&gt; Elements with innerHTML</b></a>, meaning we use JavaScript to inject additon HTML in our <span class="code">index.html</span> file.</p>
+            <p>These two lessons demonstrate the difference between <span class="code">textContent</span> & <span class="code">innerHTML</span>.</p>
+            <p>The former is <i>less labour-intensive</i> for our broswers, but interpret the given value literally. So <span class="code">&lt;li&gt;</span> would show the <b>list item</b> tag directly to the user.</p>
+            <p>The latter can manipulate the <strong>DOM</strong> to create new HTML content on the page!</p>
+            <img src="img/l15input.png" alt="">
+            <p>You can also use <b>back tics</b> to clean it up a bit:</p>
+            <code><span class="code">`&lt;li&gt; ${myLeads[i]} &lt;li&gt;`</span></code>
+        </section>
+
+        <section>
+            <h2>ALTERNATIVE to innerHTML</h2>
+            <p>Cruising along to lesson 19, <a href="https://scrimba.com/learn/learnjavascript/use-createelement-and-append-instead-of-innerhtml-co64f4984a41b95b3d8fdd905"><b>Use createElement() and append() instead of innerHTML</b></a> we see a different method. <i>It is important to remember to choose the best tool for each project.</i></p>
+        </section>
+    </main>
+</body>
+</html>
